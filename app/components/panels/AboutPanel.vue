@@ -1,24 +1,17 @@
 <template>
 	<div class="about-panel">
 		<section class="content-section fade-in fade-in-delay-1">
-			<h2 class="section-title">About</h2>
+			<h2 class="section-title">{{ t.about.sectionTitle }}</h2>
 			<div class="prose glass-card">
-				<p>はじめまして、jin doe です。日常の隙間で音楽を作っています。</p>
-				<p>
-					高校入学と同時にギターを始めてはや10数年経ちました。
-					元々はラウドなバンドでギタリストをしていてオリジナル曲を配信したりしていましたが、
-					仕事の関係でしばらく音楽から離れていました。
-				</p>
-				<p>最近仕事も落ち着いてきたので、再び音楽に取り組むことになりました。</p>
-				<p>
-					ジャンルとしては Lo-fi Hip Hop、Neo Soul,City
-					Popを中心にチルい感じの曲を作って行く予定ですが、 気分でラウドな曲も制作していきます。
-				</p>
+				<p>{{ t.about.p1 }}</p>
+				<p>{{ t.about.p2 }}</p>
+				<p>{{ t.about.p3 }}</p>
+				<p>{{ t.about.p4 }}</p>
 			</div>
 		</section>
 
 		<section class="content-section">
-			<h3 class="section-title">My Favorite Artists</h3>
+			<h3 class="section-title">{{ t.about.artistsTitle }}</h3>
 			<div class="artist-list">
 				<div v-for="artist in artists" :key="artist.name" class="artist-item glass-card">
 					<span class="artist-name">{{ artist.name }}</span>
@@ -30,6 +23,8 @@
 </template>
 
 <script setup lang="ts">
+const { t } = useI18n()
+
 const artists = [
 	{ name: 'Pay Money To My Pain', genre: 'Post-Hardcore' },
 	{ name: 'Bullet for my Valentine', genre: 'Metalcore' },

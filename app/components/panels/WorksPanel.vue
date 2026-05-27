@@ -13,32 +13,29 @@
 						:style="{ animationDelay: `${i * 0.1}s` }"
 					/>
 				</div>
-				<p v-else class="tbc">to be continued...</p>
+				<p v-else class="tbc">{{ t.works.tbc }}</p>
 			</div>
 		</template>
 	</div>
 </template>
 
 <script setup lang="ts">
-const sections = [
-	{ label: '最新曲', key: 'latest' },
-	{ label: 'Lo-fi Hip-Hop', key: 'lofi' },
-	{ label: 'Neo Soul', key: 'neosoul' },
-	{ label: 'City Pop', key: 'citypop' },
-	{ label: 'Rock / Metal', key: 'rock' },
-	{ label: 'Other', key: 'other' },
-];
+const { t } = useI18n();
+
+const sectionKeys = ['latest', 'lofi', 'neosoul', 'citypop', 'rock', 'other'] as const;
+
+const sections = computed(() => sectionKeys.map((key) => ({ key, label: t.value.works[key] })));
 
 const allTracks = [
-	/*{
+	{
 		title: 'rainy afternoon',
 		url_soundcloud: '',
-		url_youtube: '',
+		url_youtube: 'https://www.youtube.com/watch?v=Zy7jv8nqkWE',
 		url_suno: '',
 		section: 'lofi',
 		description: '雨の午後にひたすら作ったループ系の曲です。',
-	}
-	*/
+		description_en: 'A loop track I made on a rainy afternoon.',
+	},
 ];
 
 function tracksBySection(key: string) {

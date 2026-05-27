@@ -14,7 +14,7 @@
 						<span class="hero-title-accent">Jin Doe</span>
 					</h1>
 					<p class="hero-desc">
-						誰ものにもなれなかった<span class="sp-br"></span>ギタリストが<br class="pc-br" />作った曲を<span class="sp-br"></span>ゆるりと公開していきます
+						{{ t.heroDesc[0] }}<span class="sp-br"></span>{{ t.heroDesc[1] }}<br class="pc-br" />{{ t.heroDesc[2] }}
 					</p>
 				</div>
 
@@ -25,9 +25,9 @@
 						<nav v-if="!activePanel" ref="scrollContainer" class="links-scroll" key="menu">
 							<template v-for="copyIdx in 3" :key="copyIdx">
 								<template v-for="i in 4" :key="`${copyIdx}-${i}`">
-									<button class="links-item" @click="openPanel('works')">Works</button>
-									<button class="links-item" @click="openPanel('about')">About me</button>
-									<button class="links-item" @click="openPanel('links')">Links</button>
+									<button class="links-item" @click="openPanel('works')">{{ t.menu.works }}</button>
+									<button class="links-item" @click="openPanel('about')">{{ t.menu.about }}</button>
+									<button class="links-item" @click="openPanel('links')">{{ t.menu.links }}</button>
 								</template>
 							</template>
 						</nav>
@@ -36,7 +36,7 @@
 					<!-- パネルコンテンツ -->
 					<Transition name="panel">
 						<div v-if="activePanel" class="panel-wrapper" key="panel">
-							<button class="panel-back" @click="closePanel">← Back</button>
+							<button class="panel-back" @click="closePanel">{{ t.back }}</button>
 							<nav v-if="activePanel === 'works'" class="works-section-nav">
 								<button
 									v-for="s in worksSections"
@@ -64,6 +64,8 @@ useSeoMeta({
 	description: 'Lo-fi / Ambient / Chill beats を中心に制作するDTMプロデューサーのポートフォリオ',
 });
 
+const { t } = useI18n()
+
 type Panel = 'works' | 'about' | 'links' | null
 
 const linksSection = ref<HTMLElement | null>(null);
@@ -77,14 +79,10 @@ const currentScroll = computed(() =>
 	activePanel.value ? panelContent.value : scrollContainer.value
 );
 
-const worksSections = [
-	{ label: '最新曲', key: 'latest' },
-	{ label: 'Lo-fi Hip-Hop', key: 'lofi' },
-	{ label: 'Neo Soul', key: 'neosoul' },
-	{ label: 'City Pop', key: 'citypop' },
-	{ label: 'Rock / Metal', key: 'rock' },
-	{ label: 'Other', key: 'other' },
-]
+const sectionKeys = ['latest', 'lofi', 'neosoul', 'citypop', 'rock', 'other'] as const
+const worksSections = computed(() =>
+	sectionKeys.map(key => ({ key, label: t.value.works[key] }))
+)
 
 function scrollToSection(key: string) {
 	const el = panelContent.value?.querySelector(`#section-${key}`) as HTMLElement | null

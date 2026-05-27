@@ -22,7 +22,7 @@
     </div>
     <div class="track-info">
       <h3 class="track-title">{{ track.title }}</h3>
-      <p v-if="track.description" class="track-desc">{{ track.description }}</p>
+      <p v-if="desc" class="track-desc">{{ desc }}</p>
 
       <div class="platform-links">
         <a
@@ -59,9 +59,18 @@ export interface Track {
   url_suno?: string
   section: string
   description?: string
+  description_en?: string
 }
 
 const props = defineProps<{ track: Track }>()
+
+const { lang } = useLang()
+
+const desc = computed(() =>
+  lang.value === 'en' && props.track.description_en
+    ? props.track.description_en
+    : props.track.description
+)
 
 // YouTube URL から動画IDを抽出
 const youtubeId = computed(() => {
