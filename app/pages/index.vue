@@ -6,7 +6,7 @@
 				<span class="deco-blob deco-blob--2" />
 				<span class="deco-blob deco-blob--3" />
 			</div>
-			<div class="container hero-layout fade-in">
+			<div class="container hero-layout fade-in" :class="{ 'panel-active': activePanel }">
 				<!-- 左：タイトルペイン（常に表示） -->
 				<div class="hero-content">
 					<h1 class="hero-title">
@@ -340,12 +340,18 @@ onMounted(() => {
 	.hero-content {
 		flex: 1;
 		min-width: 0;
+		transition: width 0.4s ease, flex 0.4s ease;
+		overflow: hidden;
 	}
 	.hero-title {
 		margin-bottom: 12px;
+		transition: font-size 0.4s ease, margin-bottom 0.3s ease;
 	}
 	.hero-desc {
 		font-size: 0.82rem;
+		opacity: 1;
+		max-height: 80px;
+		transition: opacity 0.25s ease, max-height 0.35s ease;
 	}
 	.sp-br {
 		display: block;
@@ -359,6 +365,25 @@ onMounted(() => {
 	}
 	.links-item {
 		font-size: 1.2rem;
+	}
+
+	/* パネルを開いたときにタイトルペインを縮小 */
+	.panel-active .hero-content {
+		flex: 0 0 72px;
+		width: 72px;
+	}
+	.panel-active .hero-title {
+		font-size: 1rem;
+		margin-bottom: 0;
+		white-space: nowrap;
+	}
+	.panel-active .hero-desc {
+		opacity: 0;
+		max-height: 0;
+	}
+	.panel-active .right-col {
+		flex: 1;
+		width: auto;
 	}
 }
 </style>
