@@ -27,7 +27,7 @@ const sectionKeys = ['latest', 'lofi', 'neosoul', 'citypop', 'rock', 'other'] as
 const sections = computed(() => sectionKeys.map((key) => ({ key, label: t.value.works[key] })));
 
 const allTracks = [
-	{
+	/*{
 		title: 'rainy afternoon',
 		url_soundcloud: '',
 		url_youtube: 'https://www.youtube.com/watch?v=Zy7jv8nqkWE',
@@ -36,60 +36,7 @@ const allTracks = [
 		description: '雨の午後にひたすら作ったループ系の曲です。',
 		description_en: 'A loop track I made on a rainy afternoon.',
 	},
-	{
-		title: 'rainy afternoon',
-		url_soundcloud: '',
-		url_youtube: 'https://www.youtube.com/watch?v=Zy7jv8nqkWE',
-		url_suno: '',
-		section: 'latest',
-		description: '雨の午後にひたすら作ったループ系の曲です。',
-		description_en: 'A loop track I made on a rainy afternoon.',
-	},
-	{
-		title: 'rainy afternoon',
-		url_soundcloud: '',
-		url_youtube: 'https://www.youtube.com/watch?v=Zy7jv8nqkWE',
-		url_suno: '',
-		section: 'rock',
-		description: '雨の午後にひたすら作ったループ系の曲です。',
-		description_en: 'A loop track I made on a rainy afternoon.',
-	},
-	{
-		title: 'rainy',
-		url_soundcloud: '',
-		url_youtube: 'https://www.youtube.com/watch?v=Zy7jv8nqkWE',
-		url_suno: '',
-		section: 'metal',
-		description: '雨の午後にひたすら作ったループ系の曲です。',
-		description_en: 'A loop track I made on a rainy afternoon.',
-	},
-	{
-		title: 'rainy afternoon',
-		url_soundcloud: '',
-		url_youtube: 'https://www.youtube.com/watch?v=Zy7jv8nqkWE',
-		url_suno: '',
-		section: 'lofi',
-		description: '雨の午後にひたすら作ったループ系の曲です。',
-		description_en: 'A loop track I made on a rainy afternoon.',
-	},
-	{
-		title: 'rainy afternoon',
-		url_soundcloud: '',
-		url_youtube: 'https://www.youtube.com/watch?v=Zy7jv8nqkWE',
-		url_suno: '',
-		section: 'citypop',
-		description: '雨の午後にひたすら作ったループ系の曲です。',
-		description_en: 'A loop track I made on a rainy afternoon.',
-	},
-	{
-		title: 'rainy afternoon',
-		url_soundcloud: '',
-		url_youtube: 'https://www.youtube.com/watch?v=Zy7jv8nqkWE',
-		url_suno: '',
-		section: 'other',
-		description: '雨の午後にひたすら作ったループ系の曲です。',
-		description_en: 'A loop track I made on a rainy afternoon.',
-	},
+	*/
 ];
 
 function tracksBySection(key: string) {
