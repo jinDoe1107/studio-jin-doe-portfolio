@@ -21,14 +21,19 @@
 
 <script setup lang="ts">
 const socialLinks = [
-	{ label: 'X (Twitter)', icon: '𝕏', handle: '@studio_jin_doe', url: 'https://x.com/' },
+	{ label: 'X (Twitter)', icon: '𝕏', handle: '@studio_jin_doe', url: 'https://x.com/StudioJinDoe' },
 	{
 		label: 'SoundCloud',
 		icon: '☁️',
 		handle: 'studiojindoe',
 		url: 'https://soundcloud.com/studiojindoe',
 	},
-	{ label: 'YouTube', icon: '▶️', handle: 'studio jin doe', url: 'https://youtube.com/' },
+	{
+		label: 'YouTube',
+		icon: '▶️',
+		handle: 'studio jin doe',
+		url: 'https://www.youtube.com/@StudioJinDoe',
+	},
 	{ label: 'Suno', icon: '🎵', handle: '@jin_doe', url: 'https://suno.com/@jin_doe' },
 	{
 		label: 'Instagram',
