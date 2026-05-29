@@ -4,7 +4,7 @@ const translations = {
 		menu: {
 			works: 'Works',
 			about: 'About me',
-			links: 'Links',
+			links: 'SNS Links',
 		},
 		back: '← Back',
 		about: {
@@ -33,7 +33,7 @@ const translations = {
 		menu: {
 			works: 'Works',
 			about: 'About me',
-			links: 'Links',
+			links: 'SNS Links',
 		},
 		back: '← Back',
 		about: {

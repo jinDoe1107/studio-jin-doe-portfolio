@@ -23,17 +23,19 @@
 </template>
 
 <script setup lang="ts">
-const { t } = useI18n()
+const { t } = useI18n();
 
 const artists = [
 	{ name: 'Pay Money To My Pain', genre: 'Post-Hardcore' },
 	{ name: 'Bullet for my Valentine', genre: 'Metalcore' },
-	{ name: 'Deftones', genre: 'Alternative Metal' },
+	{ name: 'Deftones', genre: 'Alt Metal / Shoegaze' },
 	{ name: 'Taproot', genre: 'Alternative Metal' },
 	{ name: 'Tom Misch', genre: 'Neo Soul' },
 	{ name: 'nujabes', genre: 'Lo-fi Hip-Hop' },
 	{ name: 'Ginger Root', genre: 'City Pop' },
 	{ name: 'カーリー・ジラフ', genre: 'Indie Pop' },
+	{ name: 'mex.fS', genre: 'Lap tap/Percussive guitarist' },
+	{ name: '井草聖二-Seiji Igusa', genre: 'Solo Guitar' },
 	{ name: '凛として時雨', genre: 'Math Rock' },
 	{ name: 'P.O.W', genre: 'Hardcore' },
 	{ name: 'Refused', genre: 'Hardcore Punk' },
@@ -45,18 +47,18 @@ const artists = [
 	{ name: 'はっぴいえんど', genre: 'Japanese Folk Rock' },
 	{ name: 'Breaking Benjamin', genre: 'Post-Grunge' },
 	{ name: 'My Chemical Romance', genre: 'Emo / Alt Rock' },
-	{ name: 'All', genre: 'Punk Rock' },
+	{ name: 'Tempalay', genre: 'Psychedelic Rock' },
 	{ name: 'Andy McKee', genre: 'Fingerstyle Guitar' },
 	{ name: 'Architects', genre: 'Metalcore' },
 	{ name: 'Fuzzy Control', genre: 'Punk Rock' },
 	{ name: 'Hocus Pocus', genre: 'Hip-Hop' },
-	{ name: 'King Gnu', genre: 'Art Pop' },
+	{ name: 'King Gnu', genre: 'Art Rock' },
 	{ name: 'LiSA', genre: 'J-Pop / Rock' },
 	{ name: 'Memphis May Fire', genre: 'Metalcore' },
 	{ name: 'Raujika', genre: 'J-Pop' },
 	{ name: 'Slow Pulp', genre: 'Emo / Shoegaze' },
 	{ name: 'Three Days Grace', genre: 'Post-Grunge' },
-	{ name: 'Vulfpeck', genre: 'Funk' },
+	{ name: 'Vulfpeck', genre: 'Indie Funk' },
 	{ name: '', genre: 'and more...' },
 ];
 </script>

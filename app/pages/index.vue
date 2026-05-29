@@ -14,7 +14,9 @@
 						<span class="hero-title-accent">Jin Doe</span>
 					</h1>
 					<p class="hero-desc">
-						{{ t.heroDesc[0] }}<span class="sp-br"></span>{{ t.heroDesc[1] }}<br class="pc-br" />{{ t.heroDesc[2] }}
+						{{ t.heroDesc[0] }}<span class="sp-br"></span>{{ t.heroDesc[1] }}<br class="pc-br" />{{
+							t.heroDesc[2]
+						}}
 					</p>
 				</div>
 
@@ -43,7 +45,9 @@
 									:key="s.key"
 									class="works-section-btn"
 									@click="scrollToSection(s.key)"
-								>{{ s.label }}</button>
+								>
+									{{ s.label }}
+								</button>
 							</nav>
 							<div ref="panelContent" class="panel-content">
 								<PanelsWorksPanel v-if="activePanel === 'works'" />
@@ -64,9 +68,9 @@ useSeoMeta({
 	description: 'Lo-fi / Ambient / Chill beats を中心に制作するDTMプロデューサーのポートフォリオ',
 });
 
-const { t } = useI18n()
+const { t } = useI18n();
 
-type Panel = 'works' | 'about' | 'links' | null
+type Panel = 'works' | 'about' | 'links' | null;
 
 const linksSection = ref<HTMLElement | null>(null);
 const linksVisible = ref(false);
@@ -76,19 +80,21 @@ const activePanel = ref<Panel>(null);
 
 // 現在スクロール対象のコンテナ
 const currentScroll = computed(() =>
-	activePanel.value ? panelContent.value : scrollContainer.value
+	activePanel.value ? panelContent.value : scrollContainer.value,
 );
 
-const sectionKeys = ['latest', 'lofi', 'neosoul', 'citypop', 'rock', 'other'] as const
+const sectionKeys = ['latest', 'lofi', 'neosoul', 'citypop', 'rock', 'other'] as const;
 const worksSections = computed(() =>
-	sectionKeys.map(key => ({ key, label: t.value.works[key] }))
-)
+	sectionKeys.map((key) => ({ key, label: t.value.works[key] })),
+);
 
 function scrollToSection(key: string) {
-	const el = panelContent.value?.querySelector(`#section-${key}`) as HTMLElement | null
-	if (el && panelContent.value) {
-		panelContent.value.scrollTo({ top: el.offsetTop, behavior: 'smooth' })
-	}
+	const el = panelContent.value?.querySelector(`#section-${key}`) as HTMLElement | null;
+	if (!el || !panelContent.value) return;
+	const containerTop = panelContent.value.getBoundingClientRect().top;
+	const elTop = el.getBoundingClientRect().top;
+	const scrollTarget = panelContent.value.scrollTop + (elTop - containerTop) - 16;
+	panelContent.value.scrollTo({ top: Math.max(0, scrollTarget), behavior: 'smooth' });
 }
 
 function openPanel(panel: Panel) {
@@ -107,7 +113,9 @@ function closePanel() {
 
 onMounted(() => {
 	const observer = new IntersectionObserver(
-		(entries) => { if (entries[0]?.isIntersecting) linksVisible.value = true; },
+		(entries) => {
+			if (entries[0]?.isIntersecting) linksVisible.value = true;
+		},
 		{ threshold: 0.1 },
 	);
 	if (linksSection.value) observer.observe(linksSection.value);
@@ -130,9 +138,13 @@ onMounted(() => {
 	};
 
 	// scroll イベントは対象要素に直接バインドできないので watch で対応
-	watch(scrollContainer, (el) => {
-		if (el) el.addEventListener('scroll', onMenuScroll, { passive: true });
-	}, { immediate: true });
+	watch(
+		scrollContainer,
+		(el) => {
+			if (el) el.addEventListener('scroll', onMenuScroll, { passive: true });
+		},
+		{ immediate: true },
+	);
 
 	// 画面全体のホイールを現在のコンテナに転送
 	const onWheel = (e: WheelEvent) => {
@@ -169,9 +181,30 @@ onMounted(() => {
 	filter: blur(60px);
 	opacity: 0.35;
 }
-.deco-blob--1 { width: 320px; height: 320px; background: var(--pastel-purple); top: -80px; right: -60px; animation: float 6s ease-in-out infinite; }
-.deco-blob--2 { width: 240px; height: 240px; background: var(--pastel-pink); bottom: -40px; left: 10%; animation: float 8s ease-in-out infinite 1s; }
-.deco-blob--3 { width: 180px; height: 180px; background: var(--pastel-blue); top: 30%; left: 40%; animation: float 7s ease-in-out infinite 2s; }
+.deco-blob--1 {
+	width: 320px;
+	height: 320px;
+	background: var(--pastel-purple);
+	top: 0;
+	right: 0;
+	animation: float 6s ease-in-out infinite;
+}
+.deco-blob--2 {
+	width: 240px;
+	height: 240px;
+	background: var(--pastel-pink);
+	bottom: 20px;
+	left: 10%;
+	animation: float 8s ease-in-out infinite 1s;
+}
+.deco-blob--3 {
+	width: 180px;
+	height: 180px;
+	background: var(--pastel-blue);
+	top: 30%;
+	left: 40%;
+	animation: float 7s ease-in-out infinite 2s;
+}
 
 .hero-layout {
 	position: relative;
@@ -234,10 +267,18 @@ onMounted(() => {
 	scrollbar-width: none;
 	background: none;
 	border: none;
-	mask-image: linear-gradient(to bottom, transparent 0%, black 50%, black 50%, transparent 100%);
-	-webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 50%, black 50%, transparent 100%);
+	mask-image: linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%);
+	-webkit-mask-image: linear-gradient(
+		to bottom,
+		transparent 0%,
+		black 20%,
+		black 80%,
+		transparent 100%
+	);
 }
-.links-scroll::-webkit-scrollbar { display: none; }
+.links-scroll::-webkit-scrollbar {
+	display: none;
+}
 
 .links-item {
 	font-family: 'Cormorant Garamond', serif;
@@ -253,7 +294,9 @@ onMounted(() => {
 	cursor: pointer;
 	padding: 0;
 }
-.links-item:hover { color: var(--text-primary); }
+.links-item:hover {
+	color: var(--text-primary);
+}
 
 /* パネルラッパー（戻るボタン＋スクロール領域） */
 .panel-wrapper {
@@ -281,7 +324,9 @@ onMounted(() => {
 	letter-spacing: 0.04em;
 	align-self: flex-end;
 }
-.panel-back:hover { color: var(--accent-mauve); }
+.panel-back:hover {
+	color: var(--accent-mauve);
+}
 
 /* パネルコンテンツ（スクロール領域） */
 .panel-content {
@@ -292,7 +337,13 @@ onMounted(() => {
 	scrollbar-color: rgba(123, 140, 222, 0.3) transparent;
 	padding: 20px 12px 20px 12px;
 	mask-image: linear-gradient(to bottom, transparent 0%, black 3%, black 97%, transparent 100%);
-	-webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 3%, black 97%, transparent 100%);
+	-webkit-mask-image: linear-gradient(
+		to bottom,
+		transparent 0%,
+		black 3%,
+		black 97%,
+		transparent 100%
+	);
 }
 
 /* Worksセクションナビ */
@@ -327,10 +378,18 @@ onMounted(() => {
 /* トランジション */
 .panel-enter-active,
 .panel-leave-active {
-	transition: opacity 0.3s ease, transform 0.3s ease;
+	transition:
+		opacity 0.3s ease,
+		transform 0.3s ease;
 }
-.panel-enter-from { opacity: 0; transform: translateX(16px); }
-.panel-leave-to   { opacity: 0; transform: translateX(-16px); }
+.panel-enter-from {
+	opacity: 0;
+	transform: translateX(16px);
+}
+.panel-leave-to {
+	opacity: 0;
+	transform: translateX(-16px);
+}
 
 /* iPhone 15（393px）以上：横並びを維持しつつコンパクトに */
 @media (max-width: 480px) {
@@ -340,18 +399,24 @@ onMounted(() => {
 	.hero-content {
 		flex: 1;
 		min-width: 0;
-		transition: width 0.4s ease, flex 0.4s ease;
+		transition:
+			width 0.4s ease,
+			flex 0.4s ease;
 		overflow: hidden;
 	}
 	.hero-title {
 		margin-bottom: 12px;
-		transition: font-size 0.4s ease, margin-bottom 0.3s ease;
+		transition:
+			font-size 0.4s ease,
+			margin-bottom 0.3s ease;
 	}
 	.hero-desc {
 		font-size: 0.82rem;
 		opacity: 1;
 		max-height: 80px;
-		transition: opacity 0.25s ease, max-height 0.35s ease;
+		transition:
+			opacity 0.25s ease,
+			max-height 0.35s ease;
 	}
 	.sp-br {
 		display: block;
