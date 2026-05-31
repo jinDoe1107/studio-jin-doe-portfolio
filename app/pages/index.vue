@@ -50,7 +50,7 @@
 								</button>
 							</nav>
 							<div ref="panelContent" class="panel-content">
-								<PanelsWorksPanel v-if="activePanel === 'works'" />
+								<PanelsWorksPanel v-if="activePanel === 'works'" @open-links="openPanel('links')" />
 								<PanelsAboutPanel v-if="activePanel === 'about'" />
 								<PanelsLinksPanel v-if="activePanel === 'links'" />
 							</div>

@@ -16,11 +16,21 @@
 				<p v-else class="tbc">{{ t.works.tbc }}</p>
 			</div>
 		</template>
+
+		<!-- SNS Links への誘導 -->
+		<div class="sns-footer">
+			<button class="sns-cta" @click="$emit('open-links')">
+				<span>{{ t.works.snsCallout }}</span>
+				<span class="sns-cta-arrow">→</span>
+			</button>
+		</div>
 	</div>
 </template>
 
 <script setup lang="ts">
 const { t } = useI18n();
+
+defineEmits<{ 'open-links': [] }>();
 
 const sectionKeys = ['latest', 'lofi', 'neosoul', 'citypop', 'rock', 'other'] as const;
 
@@ -44,6 +54,7 @@ function tracksBySection(key: string) {
 	if (key === 'latest') return allTracks.filter((t) => t.isLatest);
 	return allTracks.filter((t) => t.section === key);
 }
+
 </script>
 
 <style scoped>
@@ -112,5 +123,41 @@ function tracksBySection(key: string) {
 	color: var(--text-secondary);
 	font-style: italic;
 	padding: 8px 0;
+}
+
+.sns-footer {
+	padding-top: 16px;
+	border-top: 1px solid rgba(123, 140, 222, 0.2);
+}
+
+.sns-cta {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	padding: 12px 18px;
+	border-radius: var(--radius-md);
+	border: 1px solid rgba(123, 140, 222, 0.25);
+	background: transparent;
+	color: var(--text-secondary);
+	font-family: inherit;
+	font-size: 0.85rem;
+	cursor: pointer;
+	transition: all 0.2s;
+}
+
+.sns-cta:hover {
+	background: rgba(123, 140, 222, 0.1);
+	color: var(--text-primary);
+	border-color: rgba(123, 140, 222, 0.45);
+}
+
+.sns-cta-arrow {
+	color: var(--accent-blue);
+	transition: transform 0.2s;
+}
+
+.sns-cta:hover .sns-cta-arrow {
+	transform: translateX(4px);
 }
 </style>
