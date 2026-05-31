@@ -27,20 +27,21 @@ const sectionKeys = ['latest', 'lofi', 'neosoul', 'citypop', 'rock', 'other'] as
 const sections = computed(() => sectionKeys.map((key) => ({ key, label: t.value.works[key] })));
 
 const allTracks = [
-	/*{
-		title: 'rainy afternoon',
-		url_soundcloud: '',
-		url_youtube: 'https://www.youtube.com/watch?v=Zy7jv8nqkWE',
-		url_suno: '',
+	{
+		title: 'Jazzy Hip Hop #1',
+		url_soundcloud: 'https://on.soundcloud.com/kTUiam1wnTNe0H12Yp',
+		url_youtube: 'https://youtu.be/fEpoFFxDVqA',
+		url_suno: 'https://suno.com/s/LsAexL5JcVY51T6h',
 		section: 'lofi',
-		description: '雨の午後にひたすら作ったループ系の曲です。',
-		description_en: 'A loop track I made on a rainy afternoon.',
+		isLatest: true,
+		tags: ['Lo-fi', 'Jazz', 'Piano'],
+		description: '切なくも温かいピアノの旋律が漂う、Jazzy Hip Hopトラックです。',
+		description_en: 'A Jazzy Hip Hop track featuring melancholic yet warm piano melodies.',
 	},
-	*/
 ];
 
 function tracksBySection(key: string) {
-	if (key === 'latest') return allTracks.slice(0, 1);
+	if (key === 'latest') return allTracks.filter((t) => t.isLatest);
 	return allTracks.filter((t) => t.section === key);
 }
 </script>

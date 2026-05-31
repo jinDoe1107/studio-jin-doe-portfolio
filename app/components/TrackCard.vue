@@ -22,6 +22,14 @@
     </div>
     <div class="track-info">
       <h3 class="track-title">{{ track.title }}</h3>
+      <div v-if="track.tags?.length" class="track-tags">
+        <span
+          v-for="(tag, i) in track.tags"
+          :key="tag"
+          class="tag"
+          :class="tagColors[i % tagColors.length]"
+        >{{ tag }}</span>
+      </div>
       <p v-if="desc" class="track-desc">{{ desc }}</p>
 
       <div class="platform-links">
@@ -58,6 +66,8 @@ export interface Track {
   url_youtube?: string
   url_suno?: string
   section: string
+  isLatest?: boolean
+  tags?: string[]
   description?: string
   description_en?: string
 }
@@ -65,6 +75,8 @@ export interface Track {
 const props = defineProps<{ track: Track }>()
 
 const { lang } = useLang()
+
+const tagColors = ['tag-purple', 'tag-pink', 'tag-blue', 'tag-mint']
 
 const desc = computed(() =>
   lang.value === 'en' && props.track.description_en
@@ -108,6 +120,12 @@ const youtubeId = computed(() => {
   font-size: 1.05rem;
   font-weight: 700;
   color: var(--text-primary);
+}
+
+.track-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
 }
 
 .track-desc {
