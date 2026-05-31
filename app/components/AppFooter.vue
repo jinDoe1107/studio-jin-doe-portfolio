@@ -23,9 +23,7 @@ const { lang, toggle } = useLang()
 	right: 0;
 	padding: 16px 0;
 	border-top: 1px solid rgba(123, 140, 222, 0.15);
-	background: rgba(13, 15, 20, 0.55);
-	backdrop-filter: blur(28px) saturate(1.4);
-	-webkit-backdrop-filter: blur(28px) saturate(1.4);
+	background: rgba(13, 15, 20, 0.85);
 	z-index: 50;
 }
 

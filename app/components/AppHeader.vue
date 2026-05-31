@@ -15,9 +15,7 @@
 	left: 0;
 	right: 0;
 	z-index: 100;
-	background: rgba(13, 15, 20, 0.55);
-	backdrop-filter: blur(28px) saturate(1.4);
-	-webkit-backdrop-filter: blur(28px) saturate(1.4);
+	background: rgba(13, 15, 20, 0.85);
 	border-bottom: 1px solid rgba(123, 140, 222, 0.12);
 }
 
