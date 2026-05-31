@@ -49,11 +49,20 @@ function inactiveEl() {
   return activeSlot.value === 'a' ? videoB.value : videoA.value
 }
 
+function pickNextIndex() {
+  if (videos.value.length <= 1) return 0
+  let next: number
+  do {
+    next = Math.floor(Math.random() * videos.value.length)
+  } while (next === currentIndex.value)
+  return next
+}
+
 function crossfade() {
   if (transitioning.value || !videos.value.length) return
   transitioning.value = true
 
-  const nextIndex = (currentIndex.value + 1) % videos.value.length
+  const nextIndex = pickNextIndex()
   const next = inactiveEl()
   if (!next) return
 
