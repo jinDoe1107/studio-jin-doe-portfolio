@@ -89,9 +89,10 @@ function onTimeUpdate(e: Event) {
 onMounted(async () => {
   videos.value = await $fetch<string[]>('/playlist.json')
   const el = videoA.value
-  const first = videos.value[0]
-  if (!el || !first) return
-  el.src = first
+  if (!el || !videos.value.length) return
+  const startIndex = Math.floor(Math.random() * videos.value.length)
+  currentIndex.value = startIndex
+  el.src = videos.value[startIndex]!
   el.load()
   el.play().catch(() => {})
 })
