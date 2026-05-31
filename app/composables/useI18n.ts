@@ -1,6 +1,6 @@
 const translations = {
 	ja: {
-		heroDesc: ['誰ものにもなれなかった', 'ギタリストが作った曲を', 'ゆるりと公開していきます'],
+		heroDesc: ['何者にもなれなかった', 'ギタリストが作った曲を', 'ゆるりと公開していきます'],
 		menu: {
 			works: 'Works',
 			about: 'About me',
