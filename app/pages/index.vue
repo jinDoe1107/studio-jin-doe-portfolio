@@ -178,31 +178,30 @@ onMounted(() => {
 .deco-blob {
 	position: absolute;
 	border-radius: 50%;
-	filter: blur(60px);
-	opacity: 0.35;
+	/* filter: blur() は WKWebView で矩形アーティファクトを生むため radial-gradient で代替 */
 }
 .deco-blob--1 {
-	width: 320px;
-	height: 320px;
-	background: var(--pastel-purple);
-	top: 0;
-	right: 0;
+	width: 640px;
+	height: 640px;
+	background: radial-gradient(circle, rgba(123, 140, 222, 0.38) 0%, transparent 70%);
+	top: -160px;
+	right: -160px;
 	animation: float 6s ease-in-out infinite;
 }
 .deco-blob--2 {
-	width: 240px;
-	height: 240px;
-	background: var(--pastel-pink);
-	bottom: 20px;
-	left: 10%;
+	width: 480px;
+	height: 480px;
+	background: radial-gradient(circle, rgba(184, 169, 232, 0.32) 0%, transparent 70%);
+	bottom: -100px;
+	left: -5%;
 	animation: float 8s ease-in-out infinite 1s;
 }
 .deco-blob--3 {
-	width: 180px;
-	height: 180px;
-	background: var(--pastel-blue);
-	top: 30%;
-	left: 40%;
+	width: 360px;
+	height: 360px;
+	background: radial-gradient(circle, rgba(107, 127, 212, 0.28) 0%, transparent 70%);
+	top: 25%;
+	left: 35%;
 	animation: float 7s ease-in-out infinite 2s;
 }
 
@@ -251,6 +250,7 @@ onMounted(() => {
 	width: 340px;
 	flex-shrink: 0;
 	height: 70vh;
+	overflow: hidden;
 }
 
 /* メニュースクロール */
@@ -267,14 +267,6 @@ onMounted(() => {
 	scrollbar-width: none;
 	background: none;
 	border: none;
-	mask-image: linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%);
-	-webkit-mask-image: linear-gradient(
-		to bottom,
-		transparent 0%,
-		black 20%,
-		black 80%,
-		transparent 100%
-	);
 }
 .links-scroll::-webkit-scrollbar {
 	display: none;
@@ -336,14 +328,6 @@ onMounted(() => {
 	scrollbar-width: thin;
 	scrollbar-color: rgba(123, 140, 222, 0.3) transparent;
 	padding: 20px 12px 20px 12px;
-	mask-image: linear-gradient(to bottom, transparent 0%, black 3%, black 97%, transparent 100%);
-	-webkit-mask-image: linear-gradient(
-		to bottom,
-		transparent 0%,
-		black 3%,
-		black 97%,
-		transparent 100%
-	);
 }
 
 /* Worksセクションナビ */
