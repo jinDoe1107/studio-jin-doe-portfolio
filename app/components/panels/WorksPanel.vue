@@ -48,13 +48,23 @@ const allTracks = [
 		description: '切なくも温かいピアノの旋律が漂う、Jazzy Hip Hopトラックです。',
 		description_en: 'A Jazzy Hip Hop track featuring melancholic yet warm piano melodies.',
 	},
+	{
+		title: 'Jazzy Hip Hop #2',
+		url_soundcloud: 'https://on.soundcloud.com/Unkx3EPK0nddmd0DAa',
+		url_youtube: 'https://youtu.be/3NSX5fFC-Ds',
+		url_suno: 'https://suno.com/s/VF8CQPBe5evhyHKE',
+		section: 'lofi',
+		isLatest: true,
+		tags: ['Lo-fi', 'Jazz', 'Piano'],
+		description: '切なくも温かいピアノの旋律が漂う、Jazzy Hip Hopトラックの２作目です。',
+		description_en: 'A Jazzy Hip Hop track featuring melancholic yet warm piano melodies.',
+	},
 ];
 
 function tracksBySection(key: string) {
 	if (key === 'latest') return allTracks.filter((t) => t.isLatest);
 	return allTracks.filter((t) => t.section === key);
 }
-
 </script>
 
 <style scoped>
