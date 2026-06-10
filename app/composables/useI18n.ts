@@ -23,7 +23,7 @@ const translations = {
 			rock: 'Rock / Metal',
 			other: 'Other',
 			tbc: 'to be continued...',
-			snsCallout: '他の曲は各種SNSからも聴けます',
+			snsCallout: '他の曲は各種SNSから',
 		},
 		footer: {
 			copy: '© 2026 Studio Jin Doe',
