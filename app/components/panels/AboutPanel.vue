@@ -95,17 +95,21 @@ const artists = [
 	gap: 8px;
 }
 .artist-item {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	padding: 12px 18px;
+	position: relative;
+	padding: 10px 18px 14px;
+	min-height: 2.8rem;
 }
 .artist-name {
+	display: block;
 	font-size: 0.9rem;
 	font-weight: 700;
 	color: var(--text-primary);
+	text-align: left;
 }
 .artist-genre {
+	position: absolute;
+	right: 18px;
+	bottom: 0px;
 	font-size: 0.75rem;
 	color: var(--text-secondary);
 }
