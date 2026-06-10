@@ -141,6 +141,6 @@ onMounted(async () => {
 
 .main-content {
   flex: 1;
-  padding: 48px 0 0;
+  padding: 64px 0 0;
 }
 </style>
