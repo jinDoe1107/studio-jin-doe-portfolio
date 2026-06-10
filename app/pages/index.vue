@@ -434,11 +434,15 @@ onMounted(() => {
 		opacity: 0;
 		max-height: 0;
 	}
+	.hero {
+		height: 100dvh;
+	}
 	.panel-active .right-col {
 		flex: 1;
 		width: auto;
 		align-self: flex-start;
 		height: calc(90vh - 12px - 12vh);
+		height: calc(90dvh - 12px - 12dvh);
 	}
 	.hero.panel-active {
 		padding-top: 12px;
