@@ -1,6 +1,10 @@
 <template>
 	<div>
-		<section ref="linksSection" class="hero" :class="{ 'links-visible': linksVisible }">
+		<section
+			ref="linksSection"
+			class="hero"
+			:class="{ 'links-visible': linksVisible, 'panel-active': activePanel }"
+		>
 			<div class="hero-deco" aria-hidden="true">
 				<span class="deco-blob deco-blob--1" />
 				<span class="deco-blob deco-blob--2" />
@@ -433,6 +437,11 @@ onMounted(() => {
 	.panel-active .right-col {
 		flex: 1;
 		width: auto;
+		align-self: flex-start;
+		height: calc(90vh - 12px - 12vh);
+	}
+	.hero.panel-active {
+		padding-top: 12px;
 	}
 }
 </style>
