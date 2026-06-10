@@ -443,5 +443,8 @@ onMounted(() => {
 	.hero.panel-active {
 		padding-top: 12px;
 	}
+	.panel-content {
+		padding-bottom: 64px;
+	}
 }
 </style>
