@@ -65,10 +65,22 @@ const allTracks = [
 		url_youtube: 'https://youtu.be/6M9YdHmbtkg',
 		url_suno: 'https://suno.com/s/bGKDCBH3Pl3Rdt5j',
 		section: 'neosoul',
-		isLatest: true,
+		isLatest: false,
 		tags: ['NeoSoul', 'Guitar', 'chill'],
 		description: 'メロウなギターの旋律が漂う、Neo Soul の第1作目です。',
 		description_en: 'Laid-back Neo Soul, carried by a gentle guitar melody that quietly floats by.',
+	},
+	{
+		title: 'Jazzy Hip Hop #3',
+		url_soundcloud:
+			'https://soundcloud.com/studiojindoe/jazzy-hip-hop-3?si=b04568c93a51472fbd3c944fd112abc4&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing',
+		url_youtube: 'https://youtu.be/pQzRRlt3kPY',
+		url_suno: 'https://suno.com/song/a9619742-c7d5-477e-91d8-ed92c396ada7',
+		section: 'lofi',
+		isLatest: true,
+		tags: ['Lo-fi', 'Jazz', 'Piano'],
+		description: '温かいピアノとギターの旋律が漂う、Jazzy Hip Hopトラックの第3作目です。',
+		description_en: 'A Jazzy Hip Hop track featuring warm piano and guitar melodies.',
 	},
 ];
 
