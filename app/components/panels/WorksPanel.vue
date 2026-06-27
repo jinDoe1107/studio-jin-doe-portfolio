@@ -77,10 +77,22 @@ const allTracks = [
 		url_youtube: 'https://youtu.be/pQzRRlt3kPY',
 		url_suno: 'https://suno.com/song/a9619742-c7d5-477e-91d8-ed92c396ada7',
 		section: 'lofi',
-		isLatest: true,
+		isLatest: false,
 		tags: ['Lo-fi', 'Jazz', 'Piano'],
 		description: '温かいピアノとギターの旋律が漂う、Jazzy Hip Hopトラックの第3作目です。',
 		description_en: 'A Jazzy Hip Hop track featuring warm piano and guitar melodies.',
+	},
+	{
+		title: 'Jazzy Hip Hop #4',
+		url_soundcloud:
+			'https://soundcloud.com/studiojindoe/jazzy-hiphop-4?si=d3cae79cf43f462db7ce3341f23898fb&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing',
+		url_youtube: 'https://youtu.be/Tr3d7RXVIho',
+		url_suno: 'https://suno.com/s/d6PBj1jOuxNkOIHh',
+		section: 'lofi',
+		isLatest: true,
+		tags: ['Lo-fi', 'Jazz', 'Piano'],
+		description: '不安定なギターの旋律が漂う、Jazzy Hip Hopトラックの第4作目です。',
+		description_en: 'A Jazzy Hip Hop track featuring unstable guitar melodies.',
 	},
 ];
 
