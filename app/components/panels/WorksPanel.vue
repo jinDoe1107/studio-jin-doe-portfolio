@@ -94,6 +94,18 @@ const allTracks = [
 		description: '不安定なギターの旋律が漂う、Jazzy Hip Hopトラックの第4作目です。',
 		description_en: 'A Jazzy Hip Hop track featuring unstable guitar melodies.',
 	},
+	{
+		title: 'Jazzy Hip Hop #4',
+		url_soundcloud:
+			'https://soundcloud.com/studiojindoe/downhill?si=5c53c7b26d55479382796c16936daf1f&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing',
+		url_youtube: 'https://youtu.be/reiXHeRDhSk',
+		url_suno: 'https://suno.com/s/MPwka6epfCy289Eo',
+		section: 'rock',
+		isLatest: true,
+		tags: ['Rock', 'Alternative'],
+		description: '制御不能な感情と、自分自身への嫌悪をテーマにしたロックナンバーです',
+		description_en: 'A rock number themed around uncontrollable emotions and self-loathing.',
+	},
 ];
 
 function tracksBySection(key: string) {
