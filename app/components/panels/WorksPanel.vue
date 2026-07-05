@@ -95,7 +95,7 @@ const allTracks = [
 		description_en: 'A Jazzy Hip Hop track featuring unstable guitar melodies.',
 	},
 	{
-		title: 'Jazzy Hip Hop #4',
+		title: 'Downhill',
 		url_soundcloud:
 			'https://soundcloud.com/studiojindoe/downhill?si=5c53c7b26d55479382796c16936daf1f&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing',
 		url_youtube: 'https://youtu.be/reiXHeRDhSk',
@@ -107,7 +107,7 @@ const allTracks = [
 		description_en: 'A rock number themed around uncontrollable emotions and self-loathing.',
 	},
 	{
-		title: 'Jazzy Hip Hop #4',
+		title: 'Letters',
 		url_soundcloud: '',
 		url_youtube: 'https://youtu.be/1EUYBfMVMVY',
 		url_suno: 'https://suno.com/s/jsaefw9QB5qCb23J',
