@@ -89,7 +89,7 @@ const allTracks = [
 		url_youtube: 'https://youtu.be/Tr3d7RXVIho',
 		url_suno: 'https://suno.com/s/d6PBj1jOuxNkOIHh',
 		section: 'lofi',
-		isLatest: true,
+		isLatest: false,
 		tags: ['Lo-fi', 'Jazz', 'Piano'],
 		description: '不安定なギターの旋律が漂う、Jazzy Hip Hopトラックの第4作目です。',
 		description_en: 'A Jazzy Hip Hop track featuring unstable guitar melodies.',
@@ -101,10 +101,23 @@ const allTracks = [
 		url_youtube: 'https://youtu.be/reiXHeRDhSk',
 		url_suno: 'https://suno.com/s/MPwka6epfCy289Eo',
 		section: 'rock',
-		isLatest: true,
+		isLatest: false,
 		tags: ['Rock', 'Alternative'],
 		description: '制御不能な感情と、自分自身への嫌悪をテーマにしたロックナンバーです',
 		description_en: 'A rock number themed around uncontrollable emotions and self-loathing.',
+	},
+	{
+		title: 'Jazzy Hip Hop #4',
+		url_soundcloud: '',
+		url_youtube: 'https://youtu.be/1EUYBfMVMVY',
+		url_suno: 'https://suno.com/s/jsaefw9QB5qCb23J',
+		section: 'rock',
+		isLatest: true,
+		tags: ['Rock', 'Alternative', 'Metal', 'Post-Hardcore'],
+		description:
+			'失った相手への未練と、自分自身への後悔を描いた楽曲です。捨てられない手紙を、忘れてはいけない過去と罰の証として表現しました。',
+		description_en:
+			'A song that depicts lingering feelings for a lost partner and regret towards oneself. The unreturnable letter is expressed as a testament to a past that must not be forgotten and as a form of punishment.',
 	},
 ];
 
