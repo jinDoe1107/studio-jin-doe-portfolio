@@ -34,6 +34,7 @@
 									<button class="links-item" @click="openPanel('works')">{{ t.menu.works }}</button>
 									<button class="links-item" @click="openPanel('about')">{{ t.menu.about }}</button>
 									<button class="links-item" @click="openPanel('links')">{{ t.menu.links }}</button>
+									<button class="links-item" @click="openPanel('tools')">{{ t.menu.tools }}</button>
 								</template>
 							</template>
 						</nav>
@@ -57,6 +58,7 @@
 								<PanelsWorksPanel v-if="activePanel === 'works'" @open-links="openPanel('links')" />
 								<PanelsAboutPanel v-if="activePanel === 'about'" />
 								<PanelsLinksPanel v-if="activePanel === 'links'" />
+								<PanelsToolsPanel v-if="activePanel === 'tools'" />
 							</div>
 						</div>
 					</Transition>
@@ -74,7 +76,7 @@ useSeoMeta({
 
 const { t } = useI18n();
 
-type Panel = 'works' | 'about' | 'links' | null;
+type Panel = 'works' | 'about' | 'links' | 'tools' | null;
 
 const linksSection = ref<HTMLElement | null>(null);
 const linksVisible = ref(false);

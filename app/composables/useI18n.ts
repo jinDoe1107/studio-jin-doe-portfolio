@@ -5,6 +5,7 @@ const translations = {
 			works: 'Works',
 			about: 'About me',
 			links: 'SNS Links',
+			tools: 'Tools',
 		},
 		back: '← Back',
 		about: {
@@ -14,6 +15,10 @@ const translations = {
 			p3: '最近仕事も落ち着いてきたので、再び音楽に取り組むことになりました。',
 			p4: 'ジャンルとしては Lo-fi Hip Hop、Neo Soul、City Pop を中心にチルい感じの曲を作って行く予定ですが、気分でラウドな曲も制作していきます。',
 			artistsTitle: 'My Favorite Artists',
+		},
+		tools: {
+			sectionTitle: 'Tools',
+			openLink: '開く',
 		},
 		works: {
 			latest: '最新曲',
@@ -35,6 +40,7 @@ const translations = {
 			works: 'Works',
 			about: 'About me',
 			links: 'SNS Links',
+			tools: 'Tools',
 		},
 		back: '← Back',
 		about: {
@@ -44,6 +50,10 @@ const translations = {
 			p3: "Things have settled down lately, so I've started making music again.",
 			p4: 'I mostly make chill stuff — Lo-fi Hip Hop, Neo Soul, City Pop — but I might throw in something loud when the mood hits.',
 			artistsTitle: 'My Favorite Artists',
+		},
+		tools: {
+			sectionTitle: 'Tools',
+			openLink: 'Open',
 		},
 		works: {
 			latest: 'Latest',
