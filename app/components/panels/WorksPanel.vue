@@ -119,6 +119,19 @@ const allTracks = [
 		description_en:
 			'A song that depicts lingering feelings for a lost partner and regret towards oneself. The unreturnable letter is expressed as a testament to a past that must not be forgotten and as a form of punishment.',
 	},
+	{
+		title: 'Trash Words',
+		url_soundcloud: '',
+		url_youtube: 'https://youtu.be/jPS9GaDTtEk',
+		url_suno: 'https://suno.com/s/3Me1PeT2d54s7I4Z',
+		section: 'rock',
+		isLatest: true,
+		tags: ['Rock', 'Alternative', 'Metal', 'Post-Hardcore'],
+		description:
+			'何も知らないくせに、勝手に人の限界を決める言葉。自分を否定してきた人たちへ向けた曲です。',
+		description_en:
+			'A song directed at those who, without knowing anything, arbitrarily set limits on others. It is aimed at those who have denied me.',
+	},
 ];
 
 function tracksBySection(key: string) {
