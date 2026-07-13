@@ -47,7 +47,7 @@ const tools: Tool[] = [
 		description_en:
 			'An app that automatically generates chord progressions by genre and mood. Additional AI-assisted features are under development.',
 		image: '/images/tools/chord-pallete.png',
-		url: 'https://studiojindoe.com/tools/chord-pallete/',
+		url: 'https://studiojindoe.com/tools/chord-palette/’,
 	},
 ];
 
