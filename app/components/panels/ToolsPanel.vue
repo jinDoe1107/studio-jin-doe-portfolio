@@ -42,12 +42,12 @@ const tools: Tool[] = [
 		url: 'https://studiojindoe.com/tools/fretglyph/',
 	},
 	{
-		name: 'Chord Pallete(開発中)',
+		name: 'Chord Palette(開発中)',
 		description: 'ジャンルXムードでコード進行を自動生成するアプリ。生成AIアシスト機能を追加開発中',
 		description_en:
 			'An app that automatically generates chord progressions by genre and mood. Additional AI-assisted features are under development.',
 		image: '/images/tools/chord-pallete.png',
-		url: 'https://studiojindoe.com/tools/chord-palette/’,
+		url: 'https://studiojindoe.com/tools/chord-palette/',
 	},
 ];
 
